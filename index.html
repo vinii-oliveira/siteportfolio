@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!importar ícones de redes sociais>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!carregar o arquivo CSS para a formatação>
+    <link rel="stylesheet" href="style.css">
+
+    <title>Portfolio Vinicius</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Vinícius</a>    
+        <!Implementação da navegação entre as abas >
+        <nav>
+            <a href="#" class="active" onclick="showContent('home')">Home</a>
+            <a href="#" onclick="showContent('sobre-mim')">Sobre mim</a>
+            <a href="#" onclick="showContent('educacao')">Educação</a>
+            <a href="#" onclick="showContent('portfolio')">Portfolio</a>
+            <a href="#" onclick="showContent('contato')">Contato</a>
+        </nav>
+    </header>
+    <section id="content" class="home">
+        <!Implementação da página de boas-vindas, home já com link>
+        <div class="home-img">
+            <img src="main.jpg" alt="">
+        </div>
+        <div class="home-conteudo">
+            <h1>Olá, meu nome é <span>Vinícius de Oliveira</span></h1>
+            <h3 class="typing-text">Sou <span></span></h3>
+            <p>Bem-vinda/o à minha página!</p>
+            <div class="social-icons">
+                <a href="https://github.com/vinii-oliveira"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <a href="#" class="btn" onclick="showContent('contato')">Contate-me</a> <!-- Atualização aqui -->
+        </div>
+    </section>
+
+    <script>
+        // Função para trocar o conteúdo dinamicamente sem precisar abrir várias páginas HTML
+        function showContent(section) {
+            let content = document.getElementById('content');
+
+            if (section === 'home') {
+                content.innerHTML = `
+                    <div class="home-img">
+                        <img src="main.jpg" alt="">
+                    </div>
+                    <div class="home-conteudo">
+                        <h1>Olá, meu nome é <span>Vinícius de Oliveira</span></h1>
+                        <h3 class="typing-text">Sou <span></span></h3>
+                        <p>Bem-vinda/o à minha página!</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                        <a href="#" class="btn" onclick="showContent('contato')">Contate-me</a> <!-- Atualização aqui -->
+                    </div>
+                `;
+            } else if (section === 'sobre-mim') {
+                content.innerHTML = `
+                <div class= "sobre-mim">
+                    <h2>Sobre mim</h2>
+                    <p>Sou um estudante de TI com grande interesse na área de segurança e proteção de dados.</p>
+                    <p>Estudando principalmente scripting com python e redes.</p>
+                    <p>Meus hobbies incluem a leitura, corrida e cuidar dos meus gatos! :D</p>
+
+                </div>
+                `;
+            } else if (section === 'educacao') {
+                content.innerHTML = `
+                <div class="educacao">
+                    <h2>Educação</h2>
+                    <p>No momento, curso o tecnólogo em Análise e Desenvolvimento de Sistemas na UNINTER.</p>
+                    <p><strong>Idiomas:</strong></p>
+                    <ul>
+                        <li><img src="uk_flag.png" alt="Inglês" class="flag"> Inglês avançado</li>
+                        <li><img src="french_flag.png" alt="Francês" class="flag"> Francês básico</li>
+                        <li><img src="spanish_flag.png" alt="Espanhol" class="flag"> Espanhol básico</li>
+                    </ul>
+                </div>
+                `;
+            } else if (section === 'portfolio') {
+                content.innerHTML = `
+                <div class="portfolio">
+                    <h2>Portfolio</h2>
+                    <p>Por enquanto não há projetos concluídos :(</p>
+                </div>
+                `;
+            } else if (section === 'contato') {
+                content.innerHTML = `
+                <div class = "contato-convite">
+                    <h2>Contato</h2>
+                    <p>Caso deseja entrar em contato, por favor preencher o formulário.</p>
+                </div>
+                <div class = "contato-formulário">
+                    <form class="contato">
+                        <input type="text" placeholder="Seu Nome" required><br>
+                        <input type="email" placeholder="Seu Email" required><br>
+                        <textarea placeholder="Sua Mensagem" required></textarea><br>
+                        <button type="submit" class="btn">Enviar</button>
+                    </form>
+                </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
